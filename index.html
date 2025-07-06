@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para el amor de mi vida</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Frases suaves en el fondo -->
+  <div class="decoracion-romantica">Te amo</div>
+  <div class="decoracion-romantica">Eres mi mundo</div>
+  <div class="decoracion-romantica">Siempre tú</div>
+
+  <!-- Frases verticales a los lados -->
+  <div class="frase-izquierda">Te amo</div>
+  <div class="frase-derecha">Para siempre</div>
+
+  <!-- Contenido principal -->
+  <div class="container">
+    <h2>Para el amor de mi vida:</h2>
+    <p>
+      Si pudiera elegir un lugar seguro,<br />
+      sería a tu lado.<br />
+      Cuanto más tiempo estoy contigo,<br />
+      más te amo.
+    </p>
+    <img src="recuerdo.jpg" alt="Imagen personalizada" class="tree" />
+    <p class="tiempo">Mi amor por ti comenzó hace…</p>
+    <div id="contador"></div>
+  </div>
+
+  <!-- Música de fondo -->
+  <audio autoplay loop hidden>
+    <source src="musica.mp3" type="audio/mpeg" />
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <!-- Script del contador + corazones -->
+  <script src="script.js"></script>
+  <script>
+    const numCorazones = 15;
+    const screenWidth = window.innerWidth;
+
+    for (let i = 0; i < numCorazones; i++) {
+      const corazon = document.createElement('div');
+      corazon.classList.add('corazon');
+      corazon.style.left = Math.random() * screenWidth + 'px';
+      corazon.style.animationDelay = (Math.random() * 4) + 's';
+      corazon.style.animationDuration = (3 + Math.random() * 3) + 's';
+      document.body.appendChild(corazon);
+    }
+  </script>
+
+</body>
+</html>

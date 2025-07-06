@@ -1,0 +1,161 @@
+/* Fondo degradado romántico y configuración general */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #ffe6e6, #fff0f5);
+  font-family: 'Arial', sans-serif;
+  color: #5C4033;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Contenedor del contenido principal */
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+/* Título */
+h2 {
+  color: #5C4033;
+  margin-bottom: 20px;
+}
+
+/* Imagen personalizada */
+.tree {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Texto del contador */
+.tiempo {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+#contador {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Corazones flotando */
+@keyframes flotar {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) translateX(30px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.corazon {
+  position: fixed;
+  bottom: -50px;
+  width: 25px;
+  height: 25px;
+  background-image: url('corazon.png'); /* Tu imagen PNG sin fondo */
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation-name: flotar;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  pointer-events: none;
+  opacity: 0.9;
+  z-index: 9999;
+}
+
+/* Frases verticales en los lados */
+.frase-izquierda, .frase-derecha {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: #d6336c;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.frase-izquierda {
+  left: 10px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.frase-derecha {
+  right: 10px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Frases decorativas en el fondo */
+.decoracion-romantica {
+  position: fixed;
+  font-size: 50px;
+  color: #f5c6d6;
+  opacity: 0.08;
+  z-index: 0;
+  font-weight: bold;
+  pointer-events: none;
+  transform: rotate(-20deg);
+}
+
+.decoracion-romantica:nth-of-type(1) {
+  top: 20%;
+  left: 10%;
+}
+
+.decoracion-romantica:nth-of-type(2) {
+  top: 60%;
+  right: 15%;
+}
+
+.decoracion-romantica:nth-of-type(3) {
+  bottom: 20%;
+  left: 30%;
+  transform: rotate(15deg);
+}
+
+/* Responsivo para celulares */
+@media screen and (max-width: 600px) {
+  .frase-izquierda, .frase-derecha {
+    display: none;
+  }
+
+  .tree {
+    max-width: 150px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  p, .tiempo, #contador {
+    font-size: 16px;
+  }
+
+  .decoracion-romantica {
+    font-size: 30px;
+  }
+}
+
+
